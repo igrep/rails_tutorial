@@ -12,8 +12,18 @@ group :development do
 end
 
 group :test do
+  gem 'minitest'
   gem 'rspec'
   gem 'webrat'
+  # Maybe require only on linux..
+  group :ubuntu do
+    #gem 'redgreen'
+    gem 'mynyml-redgreen'
+    gem 'autotest-standalone', :require => 'autotest'
+    gem 'autotest-rails-pure'
+    gem 'term-ansicolor'
+    gem 'turn'
+  end
 end
 
 # Gems used only for assets and not required
