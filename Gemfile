@@ -15,6 +15,7 @@ group :test do
   gem 'minitest'
   gem 'rspec'
   gem 'webrat'
+  gem 'spork'
   # Maybe require only on linux..
   group :ubuntu do
     #gem 'redgreen'
