@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag 'blueprint/ie' %>
   <![endif]-->
   <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  <%= stylesheet_link_tag 'nav', :media => 'screen' %>
   <!---------------JavaScript---------------------->
   <%= javascript_include_tag "application" %>
   <!--[if lt IE9]>
@@ -20,9 +21,9 @@
 <body>
 <div class="container">
 <header>
-    <div id="logo_container">
+    <span id="logo_container" class="round">
       <span id="logo" class="round">Hello, Rails!</span>
-    </div>
+    </span>
     <nav class="round">
       <ul>
         <li> <%= link_to 'Home', '#' %> </li>

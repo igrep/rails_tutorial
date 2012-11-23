@@ -11,6 +11,7 @@ header {
 }
 
 header #logo {
+  font-size: 125%;
   padding: 0.5em;
   background: #fff;
 }
@@ -32,10 +33,6 @@ section h1 {
 
 /* Links */
 
-nav a {
-  font-weight: bold;
-}
-
 a {
   color: #f90;
   text-decoration: none;
@@ -48,4 +45,27 @@ a:hover {
 
 a:visited {
   color: #f90;
+}
+
+/* Sign up button */
+
+a.signup_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #050;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
 }
