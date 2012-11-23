@@ -1,9 +1,8 @@
 RailsTutorial::Application.routes.draw do
-  get "pages/home"
 
-  get "pages/contact"
-
-  get "pages/about"
+  PagesController::PAGES.each{|page|
+    get "pages/#{page}"
+  }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
