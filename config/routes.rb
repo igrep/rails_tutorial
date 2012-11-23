@@ -1,7 +1,9 @@
 RailsTutorial::Application.routes.draw do
 
+  root :controller => 'pages', :action => 'home'
+
   PagesController::PAGES.each{|page|
-    get "pages/#{page}"
+    match "/#{page}", :controller => 'pages', :action => page
   }
 
   # The priority is based upon order of creation:
