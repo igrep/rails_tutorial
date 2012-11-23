@@ -1,0 +1,51 @@
+.container {
+  width: 710px;
+}
+
+body {
+  background: #710;
+}
+
+header {
+  padding-top: 20px;
+}
+
+header #logo {
+  padding: 0.5em;
+  background: #fff;
+}
+
+header #logo_container {
+  margin: 0.5em;
+}
+
+section {
+  margin-top: 1em;
+  font-size: 120%;
+  padding: 20px;
+  background: #fff;
+}
+
+section h1 {
+  font-size: 200%;
+}
+
+/* Links */
+
+nav a {
+  font-weight: bold;
+}
+
+a {
+  color: #f90;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f90;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #f90;
+}
