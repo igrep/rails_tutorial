@@ -2,6 +2,8 @@ RailsTutorial::Application.routes.draw do
 
   get "users/signup"
 
+  match '/signup', :controller => 'users', :action => 'signup'
+
   root :controller => 'pages', :action => 'home'
 
   PagesController::PAGES.each{|page|
