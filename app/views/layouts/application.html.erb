@@ -2,39 +2,18 @@
 <html>
 <head>
   <title><%= title %></title>
-  <!---------------CSS---------------------->
-  <%= stylesheet_link_tag    "blueprint/screen", :media => "screen" %>
-  <%= stylesheet_link_tag    "blueprint/print", :media => "print" %>
-  <!--[if lt IE8]>
-  <%= stylesheet_link_tag 'blueprint/ie' %>
-  <![endif]-->
-  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
-  <%= stylesheet_link_tag 'nav', :media => 'screen' %>
-  <!---------------JavaScript---------------------->
-  <%= javascript_include_tag "application" %>
-  <!--[if lt IE9]>
-  <%= javascript_include_tag "html5shiv/html5shiv.js" %>
-  <![endif]-->
+  <%= render 'layouts/stylesheets' %>
+  <%= render 'layouts/javascripts' %>
   <!---------------Meta---------------------->
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
-<header>
-    <span id="logo_container" class="round">
-      <span id="logo" class="round">Hello, Rails!</span>
-    </span>
-    <nav class="round">
-      <ul>
-        <li> <%= link_to 'Home', '#' %> </li>
-        <li> <%= link_to 'Help', '#' %> </li>
-        <li> <%= link_to 'Sign in', '#' %> </li>
-      </ul>
-    </nav>
-  </header>
+  <%= render 'layouts/header' %>
   <section class="round">
     <%= yield %>
   </section>
+  <%= render 'layouts/footer' %>
 </div>
 </body>
 </html>
