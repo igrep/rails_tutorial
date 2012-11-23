@@ -1,6 +1,6 @@
 RailsTutorial::Application.routes.draw do
 
-  get "users/new"
+  get "users/signup"
 
   root :controller => 'pages', :action => 'home'
 
