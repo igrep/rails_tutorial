@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   PAGES.each {|page|
     define_method page do
-      self.instance_variable_set :"@#{page}", __method__.to_s.capitalize
+      @title = __method__.to_s.capitalize
     end
   }
 end
