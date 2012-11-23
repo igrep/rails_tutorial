@@ -1,14 +1,10 @@
 class PagesController < ApplicationController
 
-  def home
-    @title = __method__.to_s.capitalize
-  end
+  PAGES = %w[home contact about help].freeze
 
-  def contact
-    @title = __method__.to_s.capitalize
-  end
-
-  def about
-    @title = __method__.to_s.capitalize
-  end
+  PAGES.each {|page|
+    define_method page {
+      self.instance_variable_set "@#{page}", __method__.to_s.capitalize
+    }
+  }
 end
