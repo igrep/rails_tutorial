@@ -1,5 +1,7 @@
 RailsTutorial::Application.routes.draw do
 
+  get "users/new"
+
   root :controller => 'pages', :action => 'home'
 
   PagesController::PAGES.each{|page|
