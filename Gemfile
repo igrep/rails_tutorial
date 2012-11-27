@@ -18,6 +18,7 @@ group :test do
   gem 'rspec'
   gem 'webrat'
   gem 'spork'
+  gem 'annotate'
   # Maybe require only on linux..
   group :ubuntu do
     #gem 'redgreen'
