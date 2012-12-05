@@ -20,11 +20,9 @@ describe User do
     expect { User.create! @user_attr }.to_not raise_error ActiveRecord::RecordInvalid
   end
 
-  it 'should require a name' do
-    User.new( @user_attr.merge name: '' ).should_not be_valid
-  end
-
-  it 'should require an email' do
-    User.new( @user_attr.merge email: '' ).should_not be_valid
+  [:name, :email].each do|required_field|
+    it "should require a #{required_field}" do
+      User.new( @user_attr.merge required_field => '' ).should_not be_valid
+    end
   end
 end
