@@ -23,4 +23,8 @@ describe User do
   it 'should require a name' do
     User.new( @user_attr.merge name: '' ).should_not be_valid
   end
+
+  it 'should require an email' do
+    User.new( @user_attr.merge email: '' ).should_not be_valid
+  end
 end
