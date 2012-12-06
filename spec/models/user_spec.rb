@@ -13,19 +13,19 @@ require 'spec_helper'
 
 module UserSpecHelper
   def new_user_with params
-    User.new( @user_attr.merge params )
+    User.new( valid_user_attr.merge params )
+  end
+
+  def valid_user_attr
+    @valid_user_attr ||= { :name => "Example User", :email => "user@example.com" }
   end
 end
 
 describe User do
   include UserSpecHelper
 
-  before :all do
-    @user_attr = { :name => "Example User", :email => "user@example.com" }
-  end
-
-  it 'should not raise error when creating one with a correct attributes' do
-    expect { User.create! @user_attr }.to_not raise_error ActiveRecord::RecordInvalid
+  it 'should accept one with a correct attributes' do
+    User.new( valid_user_attr ).should be_valid
   end
 
   [:name, :email].each do|required_field|
@@ -52,5 +52,10 @@ describe User do
     %w[user@acme,com user_at_invalid.org user@example.].each do|address|
       new_user_with( email: address ).should_not be_valid
     end
+  end
+
+  it 'should reject duplicate email address' do
+    User.create( valid_user_attr )
+    User.new( valid_user_attr ).should_not be_valid
   end
 end
