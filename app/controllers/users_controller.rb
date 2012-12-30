@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  def signup
+  def new
     @title = 'Sign up'
   end
 end

@@ -1,14 +1,14 @@
 RailsTutorial::Application.routes.draw do
 
-  get "users/signup"
+  resources :users
 
-  match '/signup', :controller => 'users', :action => 'signup'
-
-  root :controller => 'pages', :action => 'home'
+  match '/signup', :controller => 'users', :action => 'new'
 
   PagesController::PAGES.each{|page|
     match "/#{page}", :controller => 'pages', :action => page
   }
+
+  root :controller => 'pages', :action => 'home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
